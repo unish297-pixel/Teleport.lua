@@ -1,3 +1,14 @@
+local KEY = "ABC123"
+local VALID_FOR = 168 * 60 * 60 --7 day  
+
+local createdAt = os.time()
+
+if os.time() - createdAt > VALID_FOR then
+    warn("Key expired!")
+    return
+end
+
+print("Key is valid!")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
